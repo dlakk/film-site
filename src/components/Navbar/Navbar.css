@@ -1,15 +1,21 @@
 .navbar {
-    width: 100%;
-    height: 40px;
-    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+   
+    /* width: 100%; 
+     height: 40px;
+    
     padding: 1rem;
     display: flex;
     position: fixed;
+    top: 20px;
     justify-content: space-between;
     color: black;
     align-items: center;
+    z-index: 1000;
     
-    /* font-size: 28px; */
+    font-size: 28px; */
 
 }
 
@@ -19,19 +25,13 @@
     gap: 30px;
 }
 
-.navbar-left img {
-    height: 70px;
-    border-radius: 50%;
-    cursor: pointer;
-
-}
-
-.navbar-left p {
+.logo{
     text-transform: uppercase;
     color: rgba(35, 30, 53, 0.788);
     font-size: 30px;
     font-weight: 1000;
     cursor: pointer;
+    text-decoration: none;
 
 }
 

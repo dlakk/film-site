@@ -1,5 +1,6 @@
 import React from 'react'
 import './Navbar.css'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import profilephoto from '/profilephoto.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,18 +22,20 @@ const Header = () => {
   };
 }
 
-function Navbar () {
+export default function Navbar () {
   return (
     <div className='navbar'>
   <div className="navbar-left">
-    <img src={logo} alt="logo" />
-    <p>snapreels</p>
+    <Link to="/" className='logo'>
+    snapreels
+    </Link>
     <ul>
-      <a href=""><li>Home</li></a>
-      <a href=""><li>Gallery</li></a>
-      <a href=""><li>Videos</li></a>
-      <a href=""><li>About</li></a>
-      <a href=""><li>Contact us</li></a>
+      <CustomLink to="/">Home</CustomLink>
+      <CustomLink to="/gallery">Gallery</CustomLink>
+      <CustomLink to="/videos">Videos</CustomLink>
+      <CustomLink to="">About</CustomLink>
+      <CustomLink to="">Contact us</CustomLink>
+      <CustomLink to="/login">Upload</CustomLink>
     </ul>
   </div>
   <div className="navbar-right">
@@ -53,4 +56,16 @@ function Navbar () {
    
 }
 
-export default Navbar
+
+function CustomLink({to, children, ...props}){
+  const resolvedPath = useResolvedPath(to)
+  const isActive = useMatch({path:resolvedPath.pathname, end:true})
+  return(
+    <li className={isActive ? "active": ""}>
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    </li>
+  )
+}
+
