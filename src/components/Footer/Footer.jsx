@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Footer.css';
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaSearch} from 'react-icons/fa';
+
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ const Footer = () => {
           </a>
           <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
             <FaTwitter />
+            
           </a>
         </div>
       </div>

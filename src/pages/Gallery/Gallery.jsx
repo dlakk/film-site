@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Gallery.css';
 import axios from 'axios';
 import { FaHeart, FaComment, FaDownload } from 'react-icons/fa';
+import Navbar from '../../components/Navbar/Navbar';
 
 const GalleryPage = () => {
   const [galleryItems, setGalleryItems] = useState([]);
@@ -87,7 +88,9 @@ const GalleryPage = () => {
   };
 
   return (
+    <><Navbar/>
     <div className="gallery-page">
+      
       {galleryItems.map(item => (
         <div className="gallery-item" key={item.id}>
           <img src={item.urls.regular} alt={item.alt_description || item.description} />
@@ -128,6 +131,7 @@ const GalleryPage = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 

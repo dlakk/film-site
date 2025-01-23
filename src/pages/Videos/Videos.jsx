@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Videos.css';
 import axios from 'axios';
 import { FaPlay } from 'react-icons/fa';
+import Navbar from '../../components/Navbar/Navbar';
+
 
 const VideosPage = () => {
   const [videos, setVideos] = useState([]);
@@ -34,6 +36,8 @@ const VideosPage = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="videos-page">
       {videos.map(video => (
         <div className="video-item" key={video.id}>
@@ -42,6 +46,7 @@ const VideosPage = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 

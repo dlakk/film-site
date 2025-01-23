@@ -1,0 +1,38 @@
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .photo, .video {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .photo:hover, .video:hover {
+    transform: scale(1.05);
+  }
+  
+  .photo img, .video video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .photo p, .video p {
+    margin: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+  }
+  
+  .video video {
+    max-width: 100%;
+    height: auto;
+  }
+  

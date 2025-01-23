@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Home.css';
-import hero from '../../assets/hero.jpg'; // Ensure the path is correct
+import Navbar from '../../components/Navbar/Navbar'
+import heo from '../../assets/hero.jpg';
+
 
 function Home() {
   const [images, setImages] = useState([]);
@@ -39,12 +41,13 @@ function Home() {
 
   return (
     <div className="home">
+      <Navbar/>
       <div className="hero">
         <div className="hero-text">
           <h1>Capture Moments, Create Memories</h1>
           <p>Experience the art of photography and film making</p>
         </div>
-        <img src={hero} alt="Hero" />
+        <img src={heo} alt="Hero" />
       </div>
       <div className="about-section">
         <h2>About Us</h2>
